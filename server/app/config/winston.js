@@ -1,5 +1,6 @@
 import winston from 'winston';
 
+//Log ALL the things
 const logger = new (winston.Logger)({
     transports: [
         new (winston.transports.Console)({

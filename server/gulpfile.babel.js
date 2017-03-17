@@ -4,6 +4,10 @@ import path from 'path';
 import del from 'del';
 import runSequence from 'run-sequence';
 
+/**
+ * Build scripts. Please try not to touch unless you know what you're doing
+ */
+
 const plugins = gulpLoadPlugins();
 
 const paths = {

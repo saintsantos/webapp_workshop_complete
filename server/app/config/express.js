@@ -14,13 +14,19 @@ if (config.env == 'development') {
     app.use(logger('dev'));
 }
 
+/**
+ * Allows for parsing body of requests when an http request is received
+ */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+//Same as above, but with cookies
 app.use(cookieParser());
 
 
-//enable detailed API logging in dev env
+/**
+ * Enables detailed API logging
+ */
 expressWinston.requestWhitelist.push('body');
 expressWinston.responseWhitelist.push('body');
 app.use(expressWinston.logger({
@@ -30,12 +36,19 @@ app.use(expressWinston.logger({
     colorStatus: true
 }));
 
-// mount all routes on /api path
+/**
+ * mount all routes on /api path
+ */
 app.use('/api', routes);
 
-//winston logger
+/**
+ * winston logger
+ */
 app.use(expressWinston.errorLogger({
     winstonInstance
 }));
 
+/**
+ * Export so we can use elsewhere
+ */
 export default app;
