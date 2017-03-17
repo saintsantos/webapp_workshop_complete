@@ -7,6 +7,14 @@ git clone https://github.com/saintsantos/webapp_workshop_complete.git
 cd webapp_workshop_complete/server/
 ```
 
+To install npm please follow the steps in the link below (mac & linux):     
+[node installation for unix](https://github.com/creationix/nvm)
+
+
+To install on windows:      
+[node installation for windows](https://nodejs.org/en/download/)
+
+
 Install yarn:
 ```js
 npm install -g yarn
