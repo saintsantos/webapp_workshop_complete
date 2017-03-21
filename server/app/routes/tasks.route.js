@@ -5,4 +5,6 @@ const router = express.Router();
 
 router.route('/').get(taskCtrl.getAllTasks);
 
+router.route('/:id').post(taskCtrl.add);
+
 export default router;

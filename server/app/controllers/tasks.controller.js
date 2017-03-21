@@ -5,5 +5,9 @@ function getAllTasks(req, res, next) {
     });
 }
 
-
-export default {getAllTasks};
+function add(req, res, next) {
+	db('tasks').insert({task: req.query.task, created_by: req.params.id}, 'id').then(function(id) {
+		res.send(id);
+    });
+}
+export default {getAllTasks, add};
