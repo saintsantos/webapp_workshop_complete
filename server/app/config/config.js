@@ -16,10 +16,10 @@ config.express = {
 //mysql stuff
 config.dbConnection = {
     host: 'localhost',
-    user: '',
+    user: 'root',
     port: 3306,
-    password: '',
-    database: '',
+    password: 'new-password',
+    database: 'todo',
     charset: 'utf8',
     debug: true
 }

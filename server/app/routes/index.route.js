@@ -1,4 +1,6 @@
 import express from 'express';
+import taskRoute from './tasks.route';
+import userRoute from './users.route';
 
 const router = express.Router();
 /**
@@ -8,5 +10,8 @@ const router = express.Router();
 router.get('/hi', (req, res) =>
     res.send('Hi!')
 );
+
+router.use('/user', userRoute);
+router.use('/task', taskRoute);
 
 export default router;
