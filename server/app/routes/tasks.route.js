@@ -7,4 +7,8 @@ router.route('/').get(taskCtrl.getAllTasks);
 
 router.route('/:id').post(taskCtrl.add);
 
+router.route('/:id').get(taskCtrl.getUserTasks);
+
+router.route('/:id/active').get(taskCtrl.getActiveTasks);
+
 export default router;

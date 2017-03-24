@@ -21,6 +21,6 @@ config.dbConnection = {
     password: 'new-password',
     database: 'todo',
     charset: 'utf8',
-    debug: true
+    debug: false
 }
 export default config;

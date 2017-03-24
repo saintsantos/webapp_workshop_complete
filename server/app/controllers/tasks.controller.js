@@ -10,4 +10,17 @@ function add(req, res, next) {
 		res.send(id);
     });
 }
-export default {getAllTasks, add};
+
+function getUserTasks(req, res, next) {
+	db('tasks').select('task').where({created_by: req.params.id}).then(function(tasks) {
+		res.send(tasks);
+	});
+}
+
+function getActiveTasks(req, res, next) {
+	db('tasks').select('task').where({created_by: req.params.id, status: 'active'}).then(function(tasks) {
+		res.send(tasks);
+	});
+}
+
+export default {getAllTasks, add, getUserTasks, getActiveTasks};
