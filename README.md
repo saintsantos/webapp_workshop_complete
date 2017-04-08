@@ -2,6 +2,8 @@
 
 This week we will be getting familiar with databases, especially MySQL.
 
+![MySQL Logo][mysql-logo]
+
 ## Things that you should have/download
 
 These are the tools that we will be using for the workshop, and it will be impossible to complete unless you have all of these installed.
@@ -110,3 +112,4 @@ username      text                    NO
 [node]: https://nodejs.org/en/
 [node-download]: https://nodejs.org/en/download/
 [workbench]: https://www.mysql.com/products/workbench/
+[mysql-logo]: https://upload.wikimedia.org/wikipedia/en/thumb/6/62/MySQL.svg/1200px-MySQL.svg.png
