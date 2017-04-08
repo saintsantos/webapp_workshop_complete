@@ -37,6 +37,9 @@ So what happens if we want to host and manage a web application that gets 1 mill
 
 *If you are looking to get a job at a company that uses web applications or RESTful services, then you will have to get good at this stuff.*
 
+![Stories meme][stories]
+Now you too can include Stories in your applications!
+
 ### SQL vs NoSQL
 
 One of the arguments raging on in the developer world today is preference of either SQL or NoSQL databases. For this workshop series, we will stick to just SQL databases as they are a little more organized, but there are tons of great tutorials on NoSQL as well.
@@ -223,3 +226,4 @@ username      text                    NO
 [sql-image]:https://github.com/dstarner15/mdimages/raw/master/SQL.png
 [sql-vs-nosql]: http://www.thegeekstuff.com/2014/01/sql-vs-nosql-db/?utm_source=tuicool
 [database-layout]: https://github.com/dstarner15/mdimages/raw/master/database.png
+[stories]: https://cdn.meme.am/cache/instances/folder21/75812021.jpg
