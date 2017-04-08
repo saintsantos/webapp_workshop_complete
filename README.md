@@ -116,4 +116,4 @@ username      text                    NO
 [node]: https://nodejs.org/en/
 [node-download]: https://nodejs.org/en/download/
 [workbench]: https://www.mysql.com/products/workbench/
-[mysql-logo]: https://upload.wikimedia.org/wikipedia/en/thumb/6/62/MySQL.svg/1200px-MySQL.svg.png
+[mysql-logo]: http://blog.wpoven.com/wp-content/uploads/2016/10/mysql-1.jpg
