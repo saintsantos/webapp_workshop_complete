@@ -28,6 +28,15 @@ These are the tools that we will be using for the workshop, and it will be impos
 >
 > MySQL Introduction - TutorialsPoint
 
+If you've taken a class that discussed computer memory at all, the you know about two major types of memory:
+
+* **Volatile Main Memory (RAM)** - Really fast, but not persistent and/or reliable enough.
+* **Non-volatile Memory (Disks/Drives)** - Really, really slow, but persistent and pretty reliable.
+
+So what happens if we want to host and manage a web application that gets 1 million hits a minute, and we have a complex data layout with multiple users, permissions, blogs, status updates, 'stories', and whatnot? If we store all of that data in Main Memory, there's a good chance that it could be lost due to its non-persistence, but if we store it all on Disks and Hard Drives, then each request will have a long lag as data is read into memory. Both of these solutions *SUCK*, so that's where carefully written database design and software come into play. Chances are, you won't write your own underlying database, you will just create one using an existing solution such as *MySQL* or *PostgreSQL*, but you WILL most likely have to become very familiar with using these solutions. They take the efficiency and speed of main memory and caching with the persistence and reliability of secondary storage to provide blazing fast queries, lookups, and insertions, to keep the loading time down for massive web applications.
+
+*If you are looking to get a job at a company that uses web applications or RESTful services, then you will have to get good at this stuff.*
+
 ### SQL vs NoSQL
 
 One of the arguments raging on in the developer world today is preference of either SQL or NoSQL databases. For this workshop series, we will stick to just SQL databases as they are a little more organized, but there are tons of great tutorials on NoSQL as well.
@@ -105,6 +114,22 @@ We have two tables above, the *User* table and the *Blog Post* table. Each table
 Each type of database setup comes with its own tradeoffs that you can look more into [here][sql-vs-nosql]. Learn both, pick one or the other depending on your future projects, and don't listen to people who say one is absolutely better than the other.
 
 ![SQL vs NoSQL][sql-nosql]
+
+## Getting Down to Business with Our Application
+
+With some knowledge under us as to what databases are, let's actually get down to the basis of creating our very own web application! We are going to build our own **TODO List** application, that will let users input their *to do* lists and view them later on. In future weeks we will be building the actual application, but for now lets just see how we would create the database.
+
+We are going to use *MySQL*, the most popular OpenSource database software in the community. If you are looking for other options in the future, *SQLite* is really small and works for development/local testing, and *PostgreSQL* is the most scalable/fastest database software with the most available customization, but also has a higher learning curve.
+
+### Always Design BEFORE You Code/Build
+
+Before you build your database and start filling it, design it our completely first, because it will save the hassle of trying to bandaid changes and migrations over it in the future.
+
+* A **migration** is a change to the database tables in a SQL database.
+
+For this application, we will have a **User Table** to hold the names of people who are using our application and a **Task Table** to hold the different tasks and who they belong to. A visual representation is below.
+
+![Database Layout][database-layout]
 
 ### Creating the Database and Tables on Mac/Linux
 
@@ -197,3 +222,4 @@ username      text                    NO
 [sql-nosql]: https://docs.microsoft.com/fr-fr/azure/documentdb/media/documentdb-nosql-vs-sql/nosql-vs-sql-overview.png
 [sql-image]:https://github.com/dstarner15/mdimages/raw/master/SQL.png
 [sql-vs-nosql]: http://www.thegeekstuff.com/2014/01/sql-vs-nosql-db/?utm_source=tuicool
+[database-layout]: https://github.com/dstarner15/mdimages/raw/master/database.png
