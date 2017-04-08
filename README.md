@@ -76,6 +76,8 @@ First, we will create the database Schema for the application.
 ```sql
 Create new Schema (Name: todo)
 ```
+![new-schema]
+
 
 Then let's create the `tasks` table.
 
@@ -88,6 +90,8 @@ task          text                     NO
 created_by    int(10)                  NO
 status        text                     NO
 ```
+![tasks-table]
+
 
 Then let's create the `users` table.
 
@@ -98,7 +102,7 @@ Column      |       Type          |  Nullable  |  Extra
 id            int(10) unsigned        NO          PK, Auto_Inc
 username      text                    NO
 ```
-
+![users-table]
 
 [mysql]: https://www.mysql.com/
 [mysql-mac]: https://dev.mysql.com/downloads/mysql/
@@ -107,3 +111,6 @@ username      text                    NO
 [node-download]: https://nodejs.org/en/download/
 [workbench]: https://www.mysql.com/products/workbench/
 [mysql-logo]: http://blog.wpoven.com/wp-content/uploads/2016/10/mysql-1.jpg
+[new-schema]: https://cloud.githubusercontent.com/assets/22101002/24831702/ff3542da-1c6c-11e7-9c57-af154751f5e3.png
+[tasks-table]: https://cloud.githubusercontent.com/assets/22101002/24831651/f048bc30-1c6b-11e7-8aba-1fc9c7285114.png
+[users-table]: https://cloud.githubusercontent.com/assets/22101002/24831670/404a1972-1c6c-11e7-9383-3fcc613bcc49.png
