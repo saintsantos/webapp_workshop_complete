@@ -30,14 +30,50 @@ $ sudo apt-get install nodejs
 sudo apt-get install npm
 ```
 
-## Setting up your MySQL (Workbench)
+## Introduction to MySQL
 
-### Step 0:
-Everyone should have downloaded:
-* Postman (Application or Chrome extension)
-* Text Editor (Atom, Notepad++, Sublime)
+To begin the workshop series, lets start by creating a database in MySQL.
 
+### Creating the Database and Tables on Mac/Linux
 
+First, begin by logging in to MySQL.
+```
+$ mysql -u root -p (login)
+```
+
+Then we will create the database for the application, check that we did successfully create it, and then we will tell MySQL that we want to use the database.
+
+```
+$ CREATE DATABASE todo;
+$ SHOW DATABASES; (check if created)
+$ USE todo; (switch to todo database)
+```
+
+Let's create the `tasks` table.
+
+```
+$ CREATE TABLE tasks (
+    id INT unsigned NOT NULL AUTO_INCREMENT,
+    task text,
+    created_by int unsigned not null,
+    status text,
+    PRIMARY KEY (id)
+);
+```
+
+and finally let's create the users' table.
+
+```
+$ CREATE TABLE users (
+id INT unsigned NOT NULL AUTO_INCREMENT,
+username text,
+PRIMARY KEY (id)
+);
+```
+
+### Creating the Database and Tables on Windows
+
+*Valencia, fill in here.*
 
 [mysql]: https://www.mysql.com/
 [mysql-mac]: https://dev.mysql.com/downloads/mysql/
