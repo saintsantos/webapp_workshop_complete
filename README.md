@@ -41,6 +41,8 @@ So what happens if we want to host and manage a web application that gets 1 mill
 
 Now you too can include Stories in your applications!
 
+-----
+
 ### SQL vs NoSQL
 
 One of the arguments raging on in the developer world today is preference of either SQL or NoSQL databases. For this workshop series, we will stick to just SQL databases as they are a little more organized, but there are tons of great tutorials on NoSQL as well.
