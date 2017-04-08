@@ -25,9 +25,9 @@ These are the tools that we will be using for the workshop, and it will be impos
 To install NodeJS on your computer if a Mac or Windows, visit [their download site][node-download] then download and install the correct installer. If you are on a Linux computer, open your terminal and run the command below.
 
 ```
-sudo apt-get update
+$ sudo apt-get update
 $ sudo apt-get install nodejs
-sudo apt-get install npm
+$ sudo apt-get install npm
 ```
 
 ## Introduction to MySQL
