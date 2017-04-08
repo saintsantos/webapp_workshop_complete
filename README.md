@@ -74,7 +74,7 @@ For Windows, we will be using the Windows [MySQL Workbench][workbench]. Download
 First, we will create the database Schema for the application.
 
 ```sql
-Create new Schema (Name: todo)
+Create new Schema, name it 'todo'
 ```
 ![new-schema]
 
@@ -82,7 +82,7 @@ Create new Schema (Name: todo)
 Then let's create the `tasks` table.
 
 ```sql
-Create new table (Name: tasks)
+Create new table, name it 'tasks'
 
 Column      |       Type         |  Nullable  |  Extra
 id            int(10) unsigned         NO        PK, Auto_Inc
@@ -96,7 +96,7 @@ status        text                     NO
 Then let's create the `users` table.
 
 ```sql
-Create new table (Name: users)
+Create new table, name it 'users'
 
 Column      |       Type          |  Nullable  |  Extra
 id            int(10) unsigned        NO          PK, Auto_Inc
