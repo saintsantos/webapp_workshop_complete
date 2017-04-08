@@ -37,7 +37,8 @@ So what happens if we want to host and manage a web application that gets 1 mill
 
 *If you are looking to get a job at a company that uses web applications or RESTful services, then you will have to get good at this stuff.*
 
-![Stories meme][stories]
+![Stories meme][stories] 
+
 Now you too can include Stories in your applications!
 
 ### SQL vs NoSQL
