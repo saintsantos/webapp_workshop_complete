@@ -35,6 +35,7 @@ One of the arguments raging on in the developer world today is preference of eit
 **SQL Databases**, such as *MySQL*, *PostgreSQL*, and *SQLite* are **relational databases**, meaning that they are designed and built using **tables** with specific columns. Each column holds one piece of data in a very rigid format; once a column is defined as a format, its very difficult to change it later on. Relational databases are also good at *relationships* - who would've guessed? A table may have a specific column that **joins** it to another table. For example:
 
 **User Table**
+
 | ID | Username | Password    | Email        |
 |:--:|:--------:|-------------|--------------|
 | 1  | danst    | bieberfan97 | ds@gmail.com |
@@ -42,6 +43,7 @@ One of the arguments raging on in the developer world today is preference of eit
 | 3  | rachrob  | 01234567    | rr@gmail.com |
 
 **Blog Post Table**
+
 | ID |               Title              | Text        | Posted At      | User ID |
 |:--:|:--------------------------------:|-------------|----------------|---------|
 | 1  | Justin Bieber Fan Club           | (some blog) | April 8, 2017  | 1       |
