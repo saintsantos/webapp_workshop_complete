@@ -9,74 +9,31 @@ These are the tools that we will be using for the workshop, and it will be impos
 ### MySQL
 [MySQL][mysql] is the main database software that we will be using.
 
-* **Mac Installation** -
+* **Mac Installation** - Follow [this link][mysql-mac], select *MacOS* and download the DMG file. Open the DMG file and follow the instructions.
 
-* **Linux Installation**
+* **Linux Installation** - Open your terminal and follow the commands below.
+    ```
+    $ sudo apt-get update
+    $ sudo apt-get install mysql-server
+    ```
 
-* **Windows Installation**
+* **Windows Installation** - Follow [this link][mysql-windows], select *Microsoft Windows* and your Operating System, download the Installer and run it, following all instructions.
+
+### NodeJS
+[NodeJS][node] is the main framework that we will be using for the web application. It is a very powerful framework written entirely in Javascript.
 
 ## Setting up your MySQL (Workbench)
 
 ### Step 0:
 Everyone should have downloaded:
 * [MySQL][mysql] (and MySQL Workbench if on a Windows machine)
-* [Node.js][node]
+* [NodeJS][node]
 * Postman (Application or Chrome extension)
 * Text Editor (Atom, Notepad++, Sublime)
 
-### Step 1:
-* Open up MySQL (Workbench)
-* For Mac:
-    ```
-	$ mysql -u root -p (login)
-	$ CREATE DATABASE todo;
-	$ SHOW DATABASES; (check if created)
-	$ USE todo; (switch to todo database)
-	$ CREATE TABLE tasks (
-<<<<<<< HEAD
-		id INT unsigned NOT NULL AUTO_INCREMENT,
-=======
-		id INT unsigned NOT NULL AUTO_INCREMENT,
->>>>>>> 9080e263968e043744de6121465f32024bf0555b
-		Task text,
-		created_by int unsigned not null,
-		Status text,
-		PRIMARY KEY (id)
-	 );
 
-	$ CREATE TABLE users (
-		id INT unsigned NOT NULL AUTO_INCREMENT,
-		Username text,
-		PRIMARY KEY (id)
-	 );
-    ```
-
-
-* For Windows (Done in workbench)
-<<<<<<< HEAD
-    Create new Schema (Name: todo)
-=======
-    * Create new Schema (Name: todo)
->>>>>>> 9080e263968e043744de6121465f32024bf0555b
-    * Create new table (Name: tasks)
-        ```
-	Column      |       Type         |  Nullable  |  Extra
-	id            int(10) unsigned         NO        PK, Auto_Inc
-	task          text                     NO          
-	created_by    int(10)                  NO
-	status        text                     NO
-<<<<<<< HEAD
-
-=======
-
->>>>>>> 9080e263968e043744de6121465f32024bf0555b
-        Create new table (Name: users)
-        Column      |       Type          |  Nullable  |  Extra
-        id            int(10) unsigned        NO          PK, Auto_Inc
-        username      text                    NO
-	```
-<<<<<<< HEAD
 
 [mysql]: https://www.mysql.com/
-=======
->>>>>>> 9080e263968e043744de6121465f32024bf0555b
+[mysql-mac]: https://dev.mysql.com/downloads/mysql/
+[mysql-windows]: http://dev.mysql.com/downloads/installer/
+[node]: https://nodejs.org/en/
