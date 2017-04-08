@@ -65,18 +65,48 @@ and finally let's create the users' table.
 
 ```
 $ CREATE TABLE users (
-id INT unsigned NOT NULL AUTO_INCREMENT,
-username text,
-PRIMARY KEY (id)
+    id INT unsigned NOT NULL AUTO_INCREMENT,
+    username text,
+    PRIMARY KEY (id)
 );
 ```
 
 ### Creating the Database and Tables on Windows
 
-*Valencia, fill in here.*
+For Windows, we will be using the Windows [MySQL Workbench][workbench]. Download and install it on your Windows Computer.
+
+First, we will create the database Schema for the application.
+
+```
+Create new Schema (Name: todo)
+```
+
+Then let's create the `tasks` table.
+
+```
+Create new table (Name: tasks)
+
+Column      |       Type         |  Nullable  |  Extra
+id            int(10) unsigned         NO        PK, Auto_Inc
+task          text                     NO          
+created_by    int(10)                  NO
+status        text                     NO
+```
+
+Then let's create the `users` table.
+
+```
+Create new table (Name: users)
+
+Column      |       Type          |  Nullable  |  Extra
+id            int(10) unsigned        NO          PK, Auto_Inc
+username      text                    NO
+```
+
 
 [mysql]: https://www.mysql.com/
 [mysql-mac]: https://dev.mysql.com/downloads/mysql/
 [mysql-windows]: http://dev.mysql.com/downloads/installer/
 [node]: https://nodejs.org/en/
 [node-download]: https://nodejs.org/en/download/
+[workbench]: https://www.mysql.com/products/workbench/
