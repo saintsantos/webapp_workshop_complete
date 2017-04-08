@@ -11,7 +11,7 @@ These are the tools that we will be using for the workshop, and it will be impos
 ### MySQL
 [MySQL][mysql] is the main database software that we will be using.
 
-* **Mac Installation** - Follow [this link][mysql-mac], select *MacOS* and download the DMG file. Open the DMG file and follow the instructions.
+* **Mac Installation** - Follow [this link][mysql-mac], select *MacOS* and download the DMG file. Open the DMG file and follow the instructions. When MySQL first installs, it will give you a temporary password to login. Save this for later!
 
 * **Linux Installation** - Open your terminal and follow the commands below.
     ```
@@ -38,9 +38,13 @@ To begin the workshop series, lets start by creating a database in MySQL.
 
 ### Creating the Database and Tables on Mac/Linux
 
-First, begin by logging in to MySQL.
+First, begin by logging in to MySQL. Enter the temporary password you saved from before.
 ```
 $ mysql -u root -p (login)
+```
+Once logged in, we will change the password using this command: (use 'new-password' as the password!)
+```
+$ ALTER USER 'root'@'localhost' IDENTIFIED BY 'new-password';
 ```
 
 Then we will create the database for the application, check that we did successfully create it, and then we will tell MySQL that we want to use the database.
