@@ -15,7 +15,6 @@ These are the tools that we will be using for the workshop, and it will be impos
 
 * **Windows Installation**
 
-
 ## Setting up your MySQL (Workbench)
 
 ### Step 0:
@@ -34,7 +33,11 @@ Everyone should have downloaded:
 	$ SHOW DATABASES; (check if created)
 	$ USE todo; (switch to todo database)
 	$ CREATE TABLE tasks (
+<<<<<<< HEAD
 		id INT unsigned NOT NULL AUTO_INCREMENT,
+=======
+		id INT unsigned NOT NULL AUTO_INCREMENT,
+>>>>>>> 9080e263968e043744de6121465f32024bf0555b
 		Task text,
 		created_by int unsigned not null,
 		Status text,
@@ -50,7 +53,11 @@ Everyone should have downloaded:
 
 
 * For Windows (Done in workbench)
+<<<<<<< HEAD
     Create new Schema (Name: todo)
+=======
+    * Create new Schema (Name: todo)
+>>>>>>> 9080e263968e043744de6121465f32024bf0555b
     * Create new table (Name: tasks)
         ```
 	Column      |       Type         |  Nullable  |  Extra
@@ -58,11 +65,18 @@ Everyone should have downloaded:
 	task          text                     NO          
 	created_by    int(10)                  NO
 	status        text                     NO
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 9080e263968e043744de6121465f32024bf0555b
         Create new table (Name: users)
         Column      |       Type          |  Nullable  |  Extra
         id            int(10) unsigned        NO          PK, Auto_Inc
         username      text                    NO
 	```
+<<<<<<< HEAD
 
 [mysql]: https://www.mysql.com/
+=======
+>>>>>>> 9080e263968e043744de6121465f32024bf0555b
