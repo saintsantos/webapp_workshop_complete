@@ -56,7 +56,51 @@ We have two tables above, the *User* table and the *Blog Post* table. Each table
 ![SQL Relationships][sql-image]
 
 
-**NoSQL Databases** do not require the rigid structure that SQL/Relational databases have to have. This allows the databases to be more flexible with the data that they hold, but can cause some inconsistency issues that would have to be checked for, such as if one entry has a specific value but another does not. The most common type of NoSQL database configuration is **Key-Value Storing**, which is the case with *MongoDB*, one of the leaders of the NoSQL community. In *MongoDB*, everything is stored in a key-value dictionary - usually JSON, YAML, or XML - that interacting programs can request those keys and pull out the represented data. This allows for more deeply nested relationships, because a *child* entry is located inside of its *parent*, versus in SQL where they are in two different tables.
+**NoSQL Databases** do not require the rigid structure that SQL/Relational databases have to have. This allows the databases to be more flexible with the data that they hold, but can cause some inconsistency issues that would have to be checked for, such as if one entry has a specific value but another does not. The most common type of NoSQL database configuration is **Key-Value Storing**, which is the case with *MongoDB*, one of the leaders of the NoSQL community. In *MongoDB*, everything is stored in a key-value dictionary - usually JSON, YAML, or XML - that interacting programs can request those keys and pull out the represented data. This allows for more deeply nested relationships, because a *child* entry is located inside of its *parent*, versus in SQL where they are in two different tables. Using the same model structure we have above, we can store that data in a NoSQL database like so:
+
+```json
+{
+  "users": [
+    {
+      "username": "danst",
+      "password": "bieberfan97",
+      "email": "ds@gmail.com",
+      "posts": [
+        {
+          "title": "Justin Bieber Fan Club",
+          "text": "Let me tell you why Justin Bieber is the best...."
+        },
+        {
+          "title": "Why Cardboard-Only Diet Works",
+          "text": "Forget Gluten, forget Carbs, eating cardboard boxes is great...."
+        }
+      ]
+    },
+    {
+      "username": "valk",
+      "password": "qwerty123",
+      "email": "vk@gmail.com",
+      "posts": [
+        {
+          "title": "Wifi Pets Are the Next Big Thing",
+          "text": "So I just downloaded my new dog from BuyADog.com, and it was awesome!"
+        }
+      ]
+    },
+    {
+      "username": "rachrob",
+      "password": "01234567",
+      "email": "rr@gmail.com",
+      "posts": [
+        {
+          "title": "Buffalo Sports Lose Again",
+          "text": "Why is our city so bad at sports!?!?"
+        }
+      ]
+    }
+  ]
+}
+```
 
 Each type of database setup comes with its own tradeoffs that you can look more into [here][sql-vs-nosql]. Learn both, pick one or the other depending on your future projects, and don't listen to people who say one is absolutely better than the other.
 
