@@ -22,9 +22,43 @@ These are the tools that we will be using for the workshop, and it will be impos
 * **Windows Installation** - Follow [this link][mysql-windows], select *Microsoft Windows* and your Operating System, download the Installer and run it, following all instructions.
 
 
-## Introduction to MySQL
+## Introduction to MySQL & Databases
 
-To begin the workshop series, lets start by creating a database in MySQL.
+> A database is a separate application that stores a collection of data. Each database has one or more distinct APIs for creating, accessing, managing, searching and replicating the data it holds.
+>
+> MySQL Introduction - TutorialsPoint
+
+### SQL vs NoSQL
+
+One of the arguments raging on in the developer world today is preference of either SQL or NoSQL databases. For this workshop series, we will stick to just SQL databases as they are a little more organized, but there are tons of great tutorials on NoSQL as well.
+
+**SQL Databases**, such as *MySQL*, *PostgreSQL*, and *SQLite* are **relational databases**, meaning that they are designed and built using **tables** with specific columns. Each column holds one piece of data in a very rigid format; once a column is defined as a format, its very difficult to change it later on. Relational databases are also good at *relationships* - who would've guessed? A table may have a specific column that **joins** it to another table. For example:
+
+**User Table**
+| ID | Username | Password    | Email        |
+|:--:|:--------:|-------------|--------------|
+| 1  | danst    | bieberfan97 | ds@gmail.com |
+| 2  | valk     | qwerty123   | vk@gmail.com |
+| 3  | rachrob  | 01234567    | rr@gmail.com |
+
+**Blog Post Table**
+| ID |               Title              | Text        | Posted At      | User ID |
+|:--:|:--------------------------------:|-------------|----------------|---------|
+| 1  | Justin Bieber Fan Club           | (some blog) | April 8, 2017  | 1       |
+| 2  | Buffalo Sports Lose Again        | (some blog) | April 9, 2017  | 3       |
+| 3  | Wifi Pets Are the Next Big Thing | (some blog) | April 9, 2017  | 2       |
+| 4  | Why Cardboard-Only Diet Works    | (some blog) | April 11, 2017 | 1       |
+
+We have two tables above, the *User* table and the *Blog Post* table. Each table in a SQL database must have one column known as the **Primary Key**. Every row - or entry - in the table has a unique primary key to easily distinguish and find a specific entry. Using these unique keys, we can connect, or **join** different tables together, like we do above. Notice how each Blog Post entry has a field for the *User ID*. This means that we can associate a user to their posts and vis versa. This is super powerful and allows us to make some very cool relational tables. To visualize the relations, look at the picture below. Notice how a user can have any number of posts related to them, but each post can only have one user. In this case, the User is the **parent** and the blog post is the **child**.
+
+![SQL Relationships][sql-image]
+
+
+**NoSQL Databases** do not require the rigid structure that SQL/Relational databases have to have. This allows the databases to be more flexible with the data that they hold, but can cause some inconsistency issues that would have to be checked for, such as if one entry has a specific value but another does not. The most common type of NoSQL database configuration is **Key-Value Storing**, which is the case with *MongoDB*, one of the leaders of the NoSQL community. In *MongoDB*, everything is stored in a key-value dictionary - usually JSON, YAML, or XML - that interacting programs can request those keys and pull out the represented data. This allows for more deeply nested relationships, because a *child* entry is located inside of its *parent*, versus in SQL where they are in two different tables.
+
+Each type of database setup comes with its own tradeoffs that you can look more into [here][sql-vs-nosql]. Learn both, pick one or the other depending on your future projects, and don't listen to people who say one is absolutely better than the other.
+
+![SQL vs NoSQL][sql-nosql]
 
 ### Creating the Database and Tables on Mac/Linux
 
@@ -114,3 +148,6 @@ username      text                    NO
 [new-schema]: https://cloud.githubusercontent.com/assets/22101002/24831702/ff3542da-1c6c-11e7-9c57-af154751f5e3.png
 [tasks-table]: https://cloud.githubusercontent.com/assets/22101002/24831651/f048bc30-1c6b-11e7-8aba-1fc9c7285114.png
 [users-table]: https://cloud.githubusercontent.com/assets/22101002/24831670/404a1972-1c6c-11e7-9383-3fcc613bcc49.png
+[sql-nosql]: https://docs.microsoft.com/fr-fr/azure/documentdb/media/documentdb-nosql-vs-sql/nosql-vs-sql-overview.png
+[sql-image]:https://github.com/dstarner15/mdimages/raw/master/SQL.png
+[sql-vs-nosql]: http://www.thegeekstuff.com/2014/01/sql-vs-nosql-db/?utm_source=tuicool
