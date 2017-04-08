@@ -14,7 +14,7 @@ These are the tools that we will be using for the workshop, and it will be impos
 * **Mac Installation** - Follow [this link][mysql-mac], select *MacOS* and download the DMG file. Open the DMG file and follow the instructions. When MySQL first installs, it will give you a temporary password to login. Save this for later!
 
 * **Linux Installation** - Open your terminal and follow the commands below.
-    ```
+    ```bash
     $ sudo apt-get update
     $ sudo apt-get install mysql-server
     ```
@@ -26,7 +26,7 @@ These are the tools that we will be using for the workshop, and it will be impos
 
 To install NodeJS on your computer if a Mac or Windows, visit [their download site][node-download] then download and install the correct installer. If you are on a Linux computer, open your terminal and run the command below.
 
-```
+```bash
 $ sudo apt-get update
 $ sudo apt-get install nodejs
 $ sudo apt-get install npm
@@ -39,25 +39,25 @@ To begin the workshop series, lets start by creating a database in MySQL.
 ### Creating the Database and Tables on Mac/Linux
 
 First, begin by logging in to MySQL. Enter the temporary password you saved from before.
-```
-$ mysql -u root -p (login)
+```bash
+$ mysql -u root -p
 ```
 Once logged in, we will change the password using this command: (use 'new-password' as the password!)
-```
+```bash
 $ ALTER USER 'root'@'localhost' IDENTIFIED BY 'new-password';
 ```
 
 Then we will create the database for the application, check that we did successfully create it, and then we will tell MySQL that we want to use the database.
 
-```
+```bash
 $ CREATE DATABASE todo;
-$ SHOW DATABASES; (check if created)
-$ USE todo; (switch to todo database)
+$ SHOW DATABASES; 
+$ USE todo; 
 ```
 
 Let's create the `tasks` table.
 
-```
+```sql
 $ CREATE TABLE tasks (
     id INT unsigned NOT NULL AUTO_INCREMENT,
     task text,
@@ -69,7 +69,7 @@ $ CREATE TABLE tasks (
 
 and finally let's create the users' table.
 
-```
+```sql
 $ CREATE TABLE users (
     id INT unsigned NOT NULL AUTO_INCREMENT,
     username text,
@@ -83,13 +83,13 @@ For Windows, we will be using the Windows [MySQL Workbench][workbench]. Download
 
 First, we will create the database Schema for the application.
 
-```
+```sql
 Create new Schema (Name: todo)
 ```
 
 Then let's create the `tasks` table.
 
-```
+```sql
 Create new table (Name: tasks)
 
 Column      |       Type         |  Nullable  |  Extra
@@ -101,7 +101,7 @@ status        text                     NO
 
 Then let's create the `users` table.
 
-```
+```sql
 Create new table (Name: users)
 
 Column      |       Type          |  Nullable  |  Extra
