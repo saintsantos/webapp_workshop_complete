@@ -329,6 +329,23 @@ mysql> SELECT id FROM users WHERE username = 'casey';
 1 row in set (0.00 sec)
 ```
 
+Okay, so *casey* is now done using our services, and he wants to delete his account. How can we do this? By using **DELETE** of course!
+
+```
+mysql> DELETE FROM users WHERE username = 'casey';
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM users;
++----+----------+
+| id | username |
++----+----------+
+|  1 | jdoe     |
++----+----------+
+1 row in set (0.00 sec)
+```
+
+Now we only have 1 user again! 
+
 ### Inserting and Querying the Database on Windows
 
 [mysql]: https://www.mysql.com/
