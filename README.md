@@ -154,9 +154,9 @@ For this application, we will have a **User Table** to hold the names of people 
 
 ### Creating the Database and Tables on Mac/Linux
 
-Once logged in, we will change the password using this command: (use 'new-password' as the password!)
+Once logged in, using `$ mysql -u root`, we will change the password using this command: (use 'new-password' as the password!)
 ```bash
-$ mysql > ALTER USER 'root'@'localhost' IDENTIFIED BY 'new-password';
+$ mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'new-password';
 ```
 
 Then we will create the database for the application, check that we did successfully create it, and then we will tell MySQL that we want to use the database.
