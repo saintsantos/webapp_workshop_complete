@@ -19,7 +19,7 @@ These are the tools that we will be using for the workshop, and it will be impos
     $ sudo apt-get install mysql-server
     ```
 
-* **Windows Installation** - Follow [this link][mysql-windows], select *Microsoft Windows* and your Operating System, download the Installer and run it, following all instructions.
+* **Windows Installation** - Follow [this link][mysql-windows], select *Microsoft Windows* and your Operating System, download the Installer and run it, following all instructions. Then download the [SQL Workbench][workbench] and install it.
 
 
 ## Introduction to MySQL & Databases
@@ -363,3 +363,4 @@ Now we only have 1 user again!
 [sql-vs-nosql]: http://www.thegeekstuff.com/2014/01/sql-vs-nosql-db/?utm_source=tuicool
 [database-layout]: https://github.com/dstarner15/mdimages/raw/master/database.png
 [stories]: https://cdn.meme.am/cache/instances/folder21/75812021.jpg
+[workbench]: https://www.mysql.com/products/workbench/
