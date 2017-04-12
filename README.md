@@ -11,23 +11,21 @@ These are the tools that we will be using for the workshop, and it will be impos
 ### MySQL
 [MySQL][mysql] is the main database software that we will be using.
 
-* **Mac Installation** - The easiest way to do this is to first install `brew`. `brew` is a package manager for MacOS, and its essential if you are dev-ing on Mac. To install, open up the *Terminal* and run
+* **Mac Installation** - The easiest way to do this is to first install `brew`. `brew` is a package manager for MacOS, and its essential if you are dev-ing on Mac. To install, open up the *Terminal* and run *(ignoring the `#` lines)*
 
       ```bash
-      $ xcode-select --install
-      $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-      ```
-      and then you can install **MySQL** with the `brew` command.
       
-      ```bash
-      brew install mysql
-      ```
-
-      and you can open it up with:
-
-      ```bash 
+      # Install Homebrew
+      $ xcode-select --install
+      $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"      
+     
+      # Install MySQL
+      $ brew install mysql
+      
+      # Start mysql
       $ mysql -u root
 
+      # This is the command line interface for MySQL
       mysql>
       ```
 
