@@ -212,6 +212,14 @@ username      text                    NO
 ```
 ![users-table]
 
+## Messing Around with the Database
+
+Now that we have our tables, let's play around adding and removing from them!
+
+### Inserting and Querying the Database on Mac and Windows
+
+### Inserting and Querying the Database on Windows
+
 [mysql]: https://www.mysql.com/
 [mysql-mac]: https://dev.mysql.com/downloads/mysql/
 [mysql-windows]: http://dev.mysql.com/downloads/installer/
