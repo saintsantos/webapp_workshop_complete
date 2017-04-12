@@ -11,7 +11,25 @@ These are the tools that we will be using for the workshop, and it will be impos
 ### MySQL
 [MySQL][mysql] is the main database software that we will be using.
 
-* **Mac Installation** - Follow [this link][mysql-mac], select *MacOS* and download the DMG file. Open the DMG file and follow the instructions. When MySQL first installs, it will give you a temporary password to login. Save this for later!
+* **Mac Installation** - The easiest way to do this is to first install `brew`. `brew` is a package manager for MacOS, and its essential if you are dev-ing on Mac. To install, open up the *Terminal* and run
+
+```bash
+$ xcode-select --install
+$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+and then you can install **MySQL** with the `brew` command.
+```bash
+brew install mysql
+```
+
+and you can open it up with:
+
+```bash 
+$ mysql -u root
+
+mysql>
+```
 
 * **Linux Installation** - Open your terminal and follow the commands below.
     ```bash
@@ -136,10 +154,6 @@ For this application, we will have a **User Table** to hold the names of people 
 
 ### Creating the Database and Tables on Mac/Linux
 
-First, begin by logging in to MySQL. Enter the temporary password you saved from before.
-```bash
-$ mysql -u root -p
-```
 Once logged in, we will change the password using this command: (use 'new-password' as the password!)
 ```bash
 $ mysql > ALTER USER 'root'@'localhost' IDENTIFIED BY 'new-password';
