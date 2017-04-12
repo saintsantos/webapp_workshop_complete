@@ -142,37 +142,65 @@ $ mysql -u root -p
 ```
 Once logged in, we will change the password using this command: (use 'new-password' as the password!)
 ```bash
-$ ALTER USER 'root'@'localhost' IDENTIFIED BY 'new-password';
+$ mysql > ALTER USER 'root'@'localhost' IDENTIFIED BY 'new-password';
 ```
 
 Then we will create the database for the application, check that we did successfully create it, and then we will tell MySQL that we want to use the database.
 
 ```bash
-$ CREATE DATABASE todo;
-$ SHOW DATABASES;
-$ USE todo;
+mysql> CREATE DATABASE todo;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| todo               |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql > USE todo;
 ```
 
 Let's create the `tasks` table.
 
 ```sql
-$ CREATE TABLE tasks (
+mysql> CREATE TABLE tasks (
     id INT unsigned NOT NULL AUTO_INCREMENT,
     task text,
     created_by int unsigned not null,
     status text,
     PRIMARY KEY (id)
 );
+Query OK, 0 rows affected (0.02 sec)
 ```
 
 and finally let's create the users' table.
 
 ```sql
-$ CREATE TABLE users (
+mysql> CREATE TABLE users (
     id INT unsigned NOT NULL AUTO_INCREMENT,
     username text,
     PRIMARY KEY (id)
 );
+Query OK, 0 rows affected (0.01 sec)
+```
+
+We can now see that we correctly have 2 tables by using **SHOW**:
+
+```
+mysql> SHOW TABLES;
++----------------+
+| Tables_in_todo |
++----------------+
+| tasks          |
+| users          |
++----------------+
+2 rows in set (0.00 sec
 ```
 
 ### Creating the Database and Tables on Windows
@@ -216,7 +244,90 @@ username      text                    NO
 
 Now that we have our tables, let's play around adding and removing from them!
 
-### Inserting and Querying the Database on Mac and Windows
+### Inserting, Deleting, and Querying the Database on Mac and Windows
+
+So still being in your `msql` **repl** (you may know it as the command line MySQL program) you can **SHOW** all of the tables of the current database and **DESCRIBE** any of them.
+
+```
+mysql> SHOW TABLES;
++----------------+
+| Tables_in_todo |
++----------------+
+| tasks          |
+| users          |
++----------------+
+2 rows in set (0.00 sec
+```
+
+```
+mysql> DESCRIBE users;
++----------+------------------+------+-----+---------+----------------+
+| Field    | Type             | Null | Key | Default | Extra          |
++----------+------------------+------+-----+---------+----------------+
+| id       | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| username | text             | YES  |     | NULL    |                |
++----------+------------------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+```
+
+Now knowing what we need for each *user* entry, we can **INSERT** a new user into the table!
+
+```
+mysql> INSERT INTO users (username) VALUES ("jdoe");
+Query OK, 1 row affected (0.00 sec)
+```
+
+Then we can now look at what we have in our *users* table with **SELECT**.
+
+```
+mysql> SELECT * FROM users;
++----+----------+
+| id | username |
++----+----------+
+|  1 | jdoe     |
++----+----------+
+1 row in set (0.00 sec)
+```
+
+Let's try to add *another* user, and then see how we can filter between them!
+
+```
+mysql> INSERT INTO users (username) VALUES ("casey");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM users;
++----+----------+
+| id | username |
++----+----------+
+|  1 | jdoe     |
+|  2 | casey    |
++----+----------+
+2 rows in set (0.00 sec)
+```
+
+So now that we have 2 users, we can filter by using **SELECT...WHERE**.
+
+```
+mysql> SELECT * FROM users WHERE username = 'casey';
++----+----------+
+| id | username |
++----+----------+
+|  2 | casey    |
++----+----------+
+1 row in set (0.00 sec)
+```
+
+If we only want the ID for Casey, then we can change the **SELECT** portion.
+
+```
+mysql> SELECT id FROM users WHERE username = 'casey';
++----+
+| id |
++----+
+|  2 |
++----+
+1 row in set (0.00 sec)
+```
 
 ### Inserting and Querying the Database on Windows
 
