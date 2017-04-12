@@ -13,7 +13,7 @@ These are the tools that we will be using for the workshop, and it will be impos
 
 * **Mac Installation** - The easiest way to do this is to first install `brew`. `brew` is a package manager for MacOS, and its essential if you are dev-ing on Mac. To install, open up the *Terminal* and run *(ignoring the `#` lines)*
 
-      ```
+     
       
       # Install Homebrew
       $ xcode-select --install
@@ -27,7 +27,7 @@ These are the tools that we will be using for the workshop, and it will be impos
 
       # This is the command line interface for MySQL
       mysql>
-      ```
+      
 
 * **Linux Installation** - Open your terminal and follow the commands below.
     ```bash
