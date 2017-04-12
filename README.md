@@ -348,6 +348,24 @@ Now we only have 1 user again!
 
 ### Inserting and Querying the Database on Windows
 
+To ensure we enter the proper values into a table, we should probably know all of our columns' datatypes. To do this, simply hover over your table name and click on the small *i* icon. By doing this you can view all of the information about your table.
+
+Let's do this with our user table:
+![users-info]
+
+Now to view your table and all of its contents, you can either open up a new Query by going to File > New Query Tab (or by pressing Ctrl+T) and typing in ```SELECT * FROM database_name.table_name;```. Or you could hover over the table name and click on the table icon which will automatically complete this process for you.
+
+![users-viewAll]
+
+Now knowing what we need for each user entry, we can **INSERT** a new user into the table!
+The perks of mySQL Workbench is that you can simply click on your table and enter information, but keep in mind all of our column properties. For example, our ID column is unique, so if you try to have two ID values set to '4' the workbench won't allow you to do so.
+
+So just click in a username box on the table and enter a name. You could also set your own ID value, but if you choose to leave it blank, the data in the box will be filled in automatically because ID has the auto_increment attribute.
+
+![users-INSERT]
+
+I added 'jdoe' to the table just by clicking and entering, the other data I added by the code seeing uptop. To execute a query you can hit Ctrl+Shft+Enter, if you want to run a single command you can highlight and then execute.
+
 [mysql]: https://www.mysql.com/
 [mysql-mac]: https://dev.mysql.com/downloads/mysql/
 [mysql-windows]: http://dev.mysql.com/downloads/installer/
@@ -363,4 +381,6 @@ Now we only have 1 user again!
 [sql-vs-nosql]: http://www.thegeekstuff.com/2014/01/sql-vs-nosql-db/?utm_source=tuicool
 [database-layout]: https://github.com/dstarner15/mdimages/raw/master/database.png
 [stories]: https://cdn.meme.am/cache/instances/folder21/75812021.jpg
-[workbench]: https://www.mysql.com/products/workbench/
+[users-info]: https://cloud.githubusercontent.com/assets/22101002/24977668/ce193d3c-1f9b-11e7-9f81-e11a35ce57af.png
+[users-viewAll]: https://cloud.githubusercontent.com/assets/22101002/24978541/0eb3e65a-1f9f-11e7-8ef5-395e0616ebc3.png
+[users-INSERT]: https://cloud.githubusercontent.com/assets/22101002/24979903/fceca402-1fa3-11e7-893a-6153f3fd3944.png
