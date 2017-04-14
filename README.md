@@ -1,4 +1,4 @@
-# Express & mongoose REST API Boilerplate in ES6 with Code Coverage
+# Nodejs Express RESTful API
 ## Getting Started
 
 Clone the repo:
@@ -24,6 +24,11 @@ Install dependencies:
 ```sh
 yarn
 ```
+
+This repo will be using several differnet libraries in order to work with as our
+restful API. Once of these libraries is knexjs, which is a javascript library that
+allows access to a sql server through nodejs and allows for creating queries through
+javascript.
 
 Start server:
 ```sh

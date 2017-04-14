@@ -39,7 +39,7 @@ app.use(expressWinston.logger({
 /**
  * mount all routes on /api path
  */
-app.use('/api', routes);
+app.use('/', routes);
 
 /**
  * winston logger

@@ -13,5 +13,10 @@ function addUser(req, res, next) {
     });
 }
 
+function getSpecUser(req, res, next) {
+    db('users').select().where({id: req.params.id}).then(function(result) {
+        res.send(result);
+    })
+}
 
-export default {getAllUsers, addUser};
+export default {getAllUsers, addUser ,getSpecUser};

@@ -4,6 +4,7 @@ import userCtrl from '../controllers/users.controller';
 const router = express.Router();
 
 router.route('/').get(userCtrl.getAllUsers);
+router.route('/:id').get(userCtrl.getSpecUser);
 router.route('/').post(userCtrl.addUser);
 
 export default router;
