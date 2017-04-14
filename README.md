@@ -41,9 +41,23 @@ yarn start
 ## Digging Deeper
 
 Inside the server/app folder is where the major components of our API take permanent residence.
+
 Within this folder, we have 3 main directories:
-* **config**: where the configuration for the RESTful API is located
+* **config**
+  * Where the configuration for the RESTful API is located
 * **controllers**: logic behind the endpoints
 * **routes**: dictates the endpoints and functions to call
 
 index.js is the actual launch of the server.
+
+##config
+
+Inside the config file, there are several files:
+* winston.js
+  * The configuration for our debugger. Our debugger will output all HTTP requests to our server.
+* express.js
+  * The configuration for our server itself.
+* db.js
+  * Opens the connection to our mySQL database.
+* config.js
+  * Here we have our express port configuration and our database connection configuration.
