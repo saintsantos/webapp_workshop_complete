@@ -41,3 +41,5 @@ server/dist/
 
 #tag handling
 .tags
+
+server-php/src/vendor/
