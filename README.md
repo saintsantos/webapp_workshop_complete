@@ -1,4 +1,9 @@
 # Nodejs Express RESTful API
+
+Welcome to the second workshop in the UB Scientista/ACM Web Application Workshop Series! This week we will be developing the "back end"/server-side of our application using Node.js.
+
+![Node.js Logo](https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAg0AAAAJDc1MTFhNjZkLWIzMjAtNDIwOC1hYmE4LTZhN2JiZGQzYzk4MQ.png)
+
 ## Getting Started
 
 Clone the repo:
