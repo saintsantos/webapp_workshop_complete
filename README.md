@@ -2,7 +2,7 @@
 
 Welcome to the second workshop in the UB Scientista/ACM Web Application Workshop Series! This week we will be developing the "back end"/server-side of our application using Node.js.
 
-![Node.js Logo](https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAg0AAAAJDc1MTFhNjZkLWIzMjAtNDIwOC1hYmE4LTZhN2JiZGQzYzk4MQ.png)
+![Node.js Logo](https://cloud.githubusercontent.com/assets/15008142/25106404/434e7a50-2397-11e7-8f63-f2b971f15418.png)
 
 ## Getting Started
 
