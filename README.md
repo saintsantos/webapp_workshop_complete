@@ -50,9 +50,9 @@ Within this folder, we have 3 main directories:
 * **routes**:
   * Dictates the endpoints and functions to call.
 
-*index.js** is where the server actually launches.
+**index.js** is where the server actually launches.
 
-## config
+### config
 
 Inside the config file, there are several files:
 * **winston.js**
@@ -63,3 +63,16 @@ Inside the config file, there are several files:
   * Opens the connection to our mySQL database.
 * **config.js**
   * Here we have our express port configuration and our database connection configuration.
+
+### routes
+
+Routes map endpoints to functions. The route groups are defined in **index.route.js** and consist of the userRoute and the taskRoute. The routes distinguish between endpoints based upon which URL is called and the type of HTTP request. The two main types of requests we'll be dealing with and that are most common across the Internet are POST and GET. You can read more about the different types of requests here. 
+  
+### controllers
+
+The functions that are executed when an endpoint is called. 
+
+## knexjs 
+
+knexjs is a JavaScript package that allows for SQL queries to be made directly through JavaScript. This is what we'll be using to interface with our database. Read more here. 
+  
