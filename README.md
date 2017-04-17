@@ -67,7 +67,9 @@ Inside the config file, there are several files:
 ### routes
 
 Routes map endpoints to functions. Our routes are defined in **index.route.js** and consist of the userRoute and the taskRoute.
+
 The routes distinguish between endpoints based upon which URL is called and the type of HTTP request.
+
 The two main types of requests we'll be dealing with and that are most common across the Internet are **POST** and **GET**. You can read more about them [here](https://www.w3schools.com/tags/ref_httpmethods.asp). 
   
 ### controllers
