@@ -105,15 +105,15 @@ ways as well. We can append our URL using query information in order to send dif
 data under different key:value stores, as well as sending JSON through the request body
 as well. We can access each of these parts of the request in javascript by calling a different part of the request:
   * Parameters to URLs
-    * ```javascript
+    ```javascript
     req.params.<key>
     ```
   * Query data sent to URL:
-    * ```javascript
+    ```javascript
     req.query.<key>
     ```
   * Body data sent in the request:
-    * ```javascript
+    ```javascript
     req.body.<key>
     ```
 
@@ -130,7 +130,7 @@ knexjs is a JavaScript package that allows for SQL queries to be made directly t
 Here's an example of several of our database calls that we make in our API:
 
 * #### Select all rows from a table:
-  * ```javascript
+  ```javascript
   db('tasks')
   .select()
   .then(function(result) {
