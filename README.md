@@ -1,4 +1,9 @@
 # Nodejs Express RESTful API
+
+Welcome to the second workshop in the UB Scientista/ACM Web Application Workshop Series! This week we will be developing the "back end"/server-side of our application using Node.js.
+
+![Node.js Logo](https://cloud.githubusercontent.com/assets/15008142/25106404/434e7a50-2397-11e7-8f63-f2b971f15418.png)
+
 ## Getting Started
 
 Clone the repo:
@@ -37,3 +42,46 @@ yarn start
 ```
 
 ### Both http requests and sql queries will be logged to the console by default.
+
+## Digging Deeper
+
+Inside the server/app folder is where the major components of our API take permanent residence.
+
+Within this folder, we have 3 main directories:
+* **config**
+  * Where the configuration for the RESTful API is located.
+* **controllers**:
+  * Where the logic behind the endpoints is located.
+* **routes**:
+  * Dictates the endpoints and functions to call.
+
+**index.js** is where the server actually launches.
+
+### config
+
+Inside the config file, there are several files:
+* **winston.js**
+  * The configuration for our debugger. Our debugger will output all HTTP requests to our server.
+* **express.js**
+  * The configuration for our server itself.
+* **db.js**
+  * Opens the connection to our mySQL database.
+* **config.js**
+  * Here we have our express port configuration and our database connection configuration.
+
+### routes
+
+Routes map endpoints to functions. Our routes are defined in **index.route.js** and consist of the userRoute and the taskRoute.
+
+The routes distinguish between endpoints based upon which URL is called and the type of HTTP request.
+
+The two main types of requests we'll be dealing with and that are most common across the Internet are **POST** and **GET**. You can read more about them [here](https://www.w3schools.com/tags/ref_httpmethods.asp). 
+  
+### controllers
+
+The functions that are executed when an endpoint is called. 
+
+## knexjs 
+
+knexjs is a JavaScript package that allows for SQL queries to be made directly through JavaScript. This is what we'll be using to interface with our database. Documentation can be found [here](http://knexjs.org). 
+  
