@@ -34,7 +34,6 @@ $app->group('/user', function () use ($app) {
   $app->get('/{id}', function(Request $request, Response $response) {
     $this->logger->addInfo("Updating audio file");
     $id = $request->getAttribute('route')->getArgument('id');
-    $uploads_dir = '/home/edwin/Music/uploads';
     $file = $this->db->query("SELECT * from users where id=$id");
     $users = NULL;
     foreach( $file as $row) {

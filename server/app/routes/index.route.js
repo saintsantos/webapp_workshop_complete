@@ -1,6 +1,6 @@
 import express from 'express';
-import taskRoute from './tasks.route';
-import userRoute from './users.route';
+import db from '../config/db';
+import config from '../config/config';
 
 const router = express.Router();
 /**
@@ -11,7 +11,68 @@ router.get('/hi', (req, res) =>
     res.send('Hi!')
 );
 
-router.use('/user', userRoute);
-router.use('/task', taskRoute);
+router.get('/task/', function(req, res, next) {
+  db('tasks')
+  .select()
+  .then(function(result) {
+      res.send(result);
+  });
+});
+
+router.post('/task/:id',function(req, res, next) {
+  db('tasks')
+  .insert({task: req.query.task, created_by: req.params.id}, 'id')
+  .then(function(id) {
+    res.send(id);
+  });
+});
+
+router.get('/task/:id', function(req, res, next) {
+  db('tasks')
+  .select('task')
+  .where({created_by: req.params.id})
+  .then(function(tasks) {
+    res.send(tasks);
+  });
+});
+
+router.get('/task/:id/active', function(req, res, next) {
+  db('tasks')
+  .select('task')
+  .where({created_by: req.params.id, status: 'active'})
+  .then(function(tasks) {
+    res.send(tasks);
+  });
+});
+
+router.get('/user/', function(req, res, next) {
+  db('users')
+  .select()
+  .then(function(result) {
+    res.send(result);
+  });
+});
+
+router.post('/user/', function(req, res, next) {
+  db('users')
+  .insert({username: req.query.username})
+  .then(function() {
+      db('users')
+      .select()
+      .where({username: req.query.username})
+      .then(function(result) {
+          res.send(result);
+      });
+  });
+});
+router.get('/user/:id', function(req, res, next) {
+  db('users')
+  .select()
+  .where({id: req.params.id})
+  .then(function(result) {
+      res.send(result);
+  });
+});
+
 
 export default router;
