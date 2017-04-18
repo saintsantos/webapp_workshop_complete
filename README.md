@@ -79,14 +79,14 @@ The routes distinguish between endpoints based upon which URL is called and the 
 The two main types of requests we'll be dealing with and that are most common across the Internet are **POST** and **GET**. You can read more about them [here](https://www.w3schools.com/tags/ref_httpmethods.asp).
 
 Here we declare an endpoint in the application that accepts a GET request:
-  * ```
+  * ```javascript
   router.get('/task/', function(req, res) {});
   ```
 This route also has a function declared with it that handles the logic that triggers
 when this endpoint is called.
 
 Here We declare an endpoint that accepts a POST request:
-  * ```
+  * ```javascript
   router.post('/task/:id',function(req, res) {});
   ```
 
@@ -105,15 +105,15 @@ ways as well. We can append our URL using query information in order to send dif
 data under different key:value stores, as well as sending JSON through the request body
 as well. We can access each of these parts of the request in javascript by calling a different part of the request:
   * Parameters to URLs
-    * ```
+    * ```javascript
     req.params.<key>
     ```
   * Query data sent to URL:
-    * ```
+    * ```javascript
     req.query.<key>
     ```
   * Body data sent in the request:
-    * ```
+    * ```javascript
     req.body.<key>
     ```
 
@@ -130,7 +130,7 @@ knexjs is a JavaScript package that allows for SQL queries to be made directly t
 Here's an example of several of our database calls that we make in our API:
 
 * #### Select all rows from a table:
-  * ```
+  * ```javascript
   db('tasks')
   .select()
   .then(function(result) {
@@ -138,7 +138,7 @@ Here's an example of several of our database calls that we make in our API:
   });
   ```
 * #### Select only certain elements from a table (where clause):
-  * ```
+  * ```javascript
   db('tasks')
   .select('task')
   .where({created_by: req.params.id})
@@ -148,7 +148,7 @@ Here's an example of several of our database calls that we make in our API:
   ```
 
 * #### Insert into a table:
-  * ```
+  * ```javascript
   db('tasks')
   .insert({task: req.query.task, created_by: req.params.id}, 'id')
   ```
