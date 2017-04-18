@@ -6,10 +6,10 @@ Welcome to the second workshop in the UB Scientista/ACM Web Application Workshop
 
 ## Getting Started
 
-Clone the repo:
+Clone the repo and checkout the api branch:
 ```sh
 git clone https://github.com/saintsantos/webapp_workshop_complete.git
-cd webapp_workshop_complete/server/
+cd webapp_workshop_complete/server/ && git checkout api
 ```
 
 To install npm please follow the steps in the link below (mac & linux):     
@@ -19,15 +19,9 @@ To install npm please follow the steps in the link below (mac & linux):
 To install on windows:      
 [node installation for windows](https://nodejs.org/en/download/)
 
-
-Install yarn:
-```js
-npm install -g yarn
-```
-
 Install dependencies:
 ```sh
-yarn
+npm install
 ```
 
 This repo will be using several differnet libraries in order to work with as our
@@ -38,10 +32,20 @@ javascript.
 Start server:
 ```sh
 # Start server
-yarn start
+npm start
 ```
 
-### Both http requests and sql queries will be logged to the console by default.
+### What is a RESTful API?
+REST stands for representational state transfer. Which is a software architecture for distributed systems such as the world wide web.
+The internet actually represents the largest implementation of a RESTful system.
+The way a RESTful architecture works is through the use of clients and servers. The client makes an HTTP request to a server when it is looking to update its state.
+Once the server receives the request it processes that request and sends a response back to the server that contains the result of the request.
+The client can then update itself according to the information that it receives from the server. Most of the time this data is sent in the form of JSON objects.
+
+
+### Both http requests and sql queries will be logged to the console by default
+Any and all calls you make to your API in this application will be logged to the console so you can see what the call looks like and understand how the API interprets
+the call. In this workshop we will only be sending GET and POST requests to our API.
 
 ## Digging Deeper
 
@@ -50,10 +54,9 @@ Inside the server/app folder is where the major components of our API take perma
 Within this folder, we have 3 main directories:
 * **config**
   * Where the configuration for the RESTful API is located.
-* **controllers**:
-  * Where the logic behind the endpoints is located.
 * **routes**:
-  * Dictates the endpoints and functions to call.
+  * Dictates the endpoints and functions to call and implement the functions that will
+    be triggered once an endpoint is called.
 
 **index.js** is where the server actually launches.
 
@@ -62,8 +65,6 @@ Within this folder, we have 3 main directories:
 Inside the config file, there are several files:
 * **winston.js**
   * The configuration for our debugger. Our debugger will output all HTTP requests to our server.
-* **express.js**
-  * The configuration for our server itself.
 * **db.js**
   * Opens the connection to our mySQL database.
 * **config.js**
@@ -75,13 +76,79 @@ Routes map endpoints to functions. Our routes are defined in **index.route.js** 
 
 The routes distinguish between endpoints based upon which URL is called and the type of HTTP request.
 
-The two main types of requests we'll be dealing with and that are most common across the Internet are **POST** and **GET**. You can read more about them [here](https://www.w3schools.com/tags/ref_httpmethods.asp). 
-  
+The two main types of requests we'll be dealing with and that are most common across the Internet are **POST** and **GET**. You can read more about them [here](https://www.w3schools.com/tags/ref_httpmethods.asp).
+
+Here we declare an endpoint in the application that accepts a GET request:
+  * ```js
+  router.get('/task/', function(req, res) {});
+  ```
+This route also has a function declared with it that handles the logic that triggers
+when this endpoint is called.
+
+Here We declare an endpoint that accepts a POST request:
+  * ```js
+  router.post('/task/:id',function(req, res) {});
+  ```
+
+Now that we know what the endpoints look like let's dig a little further into them.
+`router` is simply the express library in Nodejs that let's us declare this as a route.
+`.get() & .post()` are the types of requests that these endpoints will accept. `req` is
+the actual request body itself. This can be called and accessed using standard context
+for accessing any JSON object in javascript. `res` is the response header for this
+endpoint. This is where we insert any data we want to send back to the frontend.
+
+Notice how the URL has a `:id` in it. That is known as a parameter. We can pass a
+parameter into our logic for our endpoint by simply modifying this value when we call
+the endpoint. We change the endpoint in this example by calling:
+`http://localhost/task/3` to get tasks created by user with the id of 3. There are other
+ways as well. We can append our URL using query information in order to send different
+data under different key:value stores, as well as sending JSON through the request body
+as well. We can access each of these parts of the request in javascript by calling a different part of the request:
+  * Parameters to URLs
+    * ```js
+    req.params.<key>
+    ```
+  * Query data sent to URL:
+    * ```js
+    req.query.<key>
+    ```
+  * Body data sent in the request:
+    * ```js
+    req.body.<key>
+    ```
+
+Using these values allows you to control what the funciton at the endpoint does and helps you to get the data that you want when you call these endpoints.
+
 ### controllers
 
-The functions that are executed when an endpoint is called. 
+The functions that are executed when an endpoint is called. In our API these are implicitly declared at our endpoints.
 
-## knexjs 
+## knexjs
 
-knexjs is a JavaScript package that allows for SQL queries to be made directly through JavaScript. This is what we'll be using to interface with our database. Documentation can be found [here](http://knexjs.org). 
-  
+knexjs is a JavaScript package that allows for SQL queries to be made directly through JavaScript. This is what we'll be using to interface with our database. Documentation can be found [here](http://knexjs.org).
+
+Here's an example of several of our database calls that we make in our API:
+
+* #### Select all rows from a table:
+  * ```js
+  db('tasks')
+  .select()
+  .then(function(result) {
+      res.send(result);
+  });
+  ```
+* #### Select only certain elements from a table (where clause):
+  * ```js
+  db('tasks')
+  .select('task')
+  .where({created_by: req.params.id})
+  .then(function(tasks) {
+    res.send(tasks);
+  });
+  ```
+
+* #### Insert into a table:
+  * ```js
+  db('tasks')
+  .insert({task: req.query.task, created_by: req.params.id}, 'id')
+  ```
