@@ -8,13 +8,13 @@ The workshop is broken up into 3 parts:
 * Buliding the back-end/restful API using Node.js
 * Building the frontend of the web app
 
-To follow along with the workshop, please see the README files for each part, accessible through there respective git branches.
+To follow along with the workshop, please see the README files for each part, accessible through their respective git branches.
 
-* Database (see `database` branch)
+## Database (see `database` branch)
 _Catch the workshop video_ [here](https://www.youtube.com/watch?v=k3664W7165s)
 
-* Back-end/API (see `api` branch)
+## Back-end/API (see `api` branch)
 _Stay tuned for the workshop video!_ 
 
-* Front-end (see 'frontend` branch)
+## Front-end (see `frontend` branch)
 _Stay tuned for the workshop video!_ 
