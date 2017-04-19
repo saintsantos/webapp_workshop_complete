@@ -142,6 +142,8 @@ The functions that are executed when an endpoint is called. In our API these are
 
 knexjs is a JavaScript package that allows for SQL queries to be made directly through JavaScript. This is what we'll be using to interface with our database. Documentation can be found [here](http://knexjs.org).
 
+![knex.js Logo](http://knexjs.org/assets/images/knex.png)
+
 Here's an example of several of our database calls that we make in our API:
 
 * #### Select all rows from a table:
