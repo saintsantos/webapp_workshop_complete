@@ -12,7 +12,7 @@ git clone https://github.com/saintsantos/webapp_workshop_complete.git
 cd webapp_workshop_complete/server/ && git checkout api
 ```
 
-**To install npm please follow the steps in the link below:**
+To install npm please follow the steps in the link below:
 
 **To install on Mac & Linux:**
 
@@ -45,34 +45,36 @@ npm install
 
 This repo will be using several different libraries in order to work as our
 restful API. One of these libraries is Knex.js, which is a JavaScript library that
-allows access to a sql server through nodejs and allows for creating queries through
-javascript.
+allows access to a SQL server through Node.js and allows for creating queries through
+JavaScript.
 
-Start server:
+**Start server:**
 ```sh
 # Start server
 npm start
 ```
 
-Install Postman from the chrome web store [here](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop)
+Install Postman from the chrome web store [here](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop).
 
 ### What is a RESTful API?
-REST stands for representational state transfer. Which is a software architecture for distributed systems such as the world wide web.
+REST stands for representational state transfer. It is a software architecture for distributed systems such as the World Wide Web.
 The internet actually represents the largest implementation of a RESTful system.
-The way a RESTful architecture works is through the use of clients and servers. The client makes an HTTP request to a server when it is looking to update its state.
-Once the server receives the request it processes that request and sends a response back to the server that contains the result of the request.
-The client can then update itself according to the information that it receives from the server. Most of the time this data is sent in the form of JSON objects.
+
+The way a RESTful architecture works is through the use of clients and servers.
+* The client makes an HTTP request to a server when it is looking to update its state.
+* Once the server receives the request, it processes that request and sends a response back to the server that contains the result of the request.
+* The client can then update itself according to the information that it receives from the server. Most of the time this data is sent in the form of JSON objects. (More on JSON [here](https://www.w3schools.com/js/js_json_intro.asp).)
 
 
-### Both http requests and sql queries will be logged to the console by default
-Any and all calls you make to your API in this application will be logged to the console so you can see what the call looks like and understand how the API interprets
+### Both HTTP requests and SQL queries will be logged to the console by default
+Any and all calls you make to your API in this application will be logged to the console so that you can see what the call looks like and understand how the API interprets
 the call. In this workshop we will only be sending GET and POST requests to our API.
 
 ## Digging Deeper
 
-Inside the server/app folder is where the major components of our API take permanent residence.
+Inside the server/app folder is where the major components of our API reside.
 
-Within this folder, we have 3 main directories:
+Within this folder, we have 2 main directories:
 * **config**
   * Where the configuration for the RESTful API is located.
 * **routes**:
@@ -110,20 +112,23 @@ Here we declare an endpoint that accepts a POST request:
   router.post('/task/:id',function(req, res) {});
   ```
 
-Now that we know what the endpoints look like let's dig a little further into them.
-`router` is simply the express library in Nodejs that let's us declare this as a route.
-`.get() & .post()` are the types of requests that these endpoints will accept. `req` is
-the actual request body itself. This can be called and accessed using standard context
-for accessing any JSON object in javascript. `res` is the response header for this
-endpoint. This is where we insert any data we want to send back to the frontend.
+Now that we know what the endpoints look like, let's dig a little further into them.
+* `router` is simply the express library in Node.js that lets us declare this as a route.
+* `.get() & .post()` are the types of requests that these endpoints will accept.
+* `req` is the actual request body itself. This can be called and accessed using standard context
+for accessing any JSON object in JavaScript.
+* `res` is the response header for this endpoint. This is where we insert any data we want to send back to the frontend.
 
 Notice how the URL has a `:id` in it. That is known as a parameter. We can pass a
 parameter into our logic for our endpoint by simply modifying this value when we call
-the endpoint. We change the endpoint in this example by calling:
-`http://localhost/task/3` to get tasks created by user with the id of 3. There are other
-ways as well. We can append our URL using query information in order to send different
+the endpoint. 
+
+We change the endpoint in this example by calling:
+`http://localhost/task/3` to get tasks created by user with the id of 3.
+
+There are other ways as well. We can append our URL using query information in order to send different
 data under different key:value stores, as well as sending JSON through the request body
-as well. We can access each of these parts of the request in javascript by calling a different part of the request:
+as well. We can access each of these parts of the request in JavaScript by calling a different part of the request:
   * Parameters to URLs
     ```javascript
     req.params.<key>
@@ -137,7 +142,7 @@ as well. We can access each of these parts of the request in javascript by calli
     req.body.<key>
     ```
 
-Using these values allows you to control what the funciton at the endpoint does and helps you to get the data that you want when you call these endpoints.
+Using these values allows you to control what the function at the endpoint does and helps you to get the data that you want when you call these endpoints.
 
 ### controllers
 
