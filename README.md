@@ -14,7 +14,8 @@ cd webapp_workshop_complete/server/ && git checkout api
 
 To install npm please follow the steps in the link below (mac & linux):     
 [node installation for unix](https://github.com/creationix/nvm)
-on mac (not necessary on linux):
+
+if on mac (not necessary on linux):
 ```sh
 brew install wget
 ```
