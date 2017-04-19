@@ -12,11 +12,11 @@ The workshop is broken up into 3 parts:
 
 To follow along with the workshop, please see the README files for each part, accessible through their respective git branches.
 
-## Database (see `database` branch)
+## Database (see `database` branch [here](https://github.com/saintsantos/webapp_workshop_complete/tree/database))
 _Catch the workshop video_ [here](https://www.youtube.com/watch?v=k3664W7165s).
 
-## Back-end/API (see `api` branch)
+## Back-end/API (see `api` branch [here](https://github.com/saintsantos/webapp_workshop_complete/tree/api))
 _Stay tuned for the workshop video!_ 
 
-## Front-end (see `frontend` branch)
+## Front-end (see `frontend` branch [here](https://github.com/saintsantos/webapp_workshop_complete/tree/frontend))
 _Stay tuned for the workshop video!_ 
