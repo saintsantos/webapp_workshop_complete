@@ -113,19 +113,22 @@ Here we declare an endpoint that accepts a POST request:
   ```
 
 Now that we know what the endpoints look like, let's dig a little further into them.
-* `router` is simply the express library in Nodejs that lets us declare this as a route.
+* `router` is simply the express library in Node.js that lets us declare this as a route.
 * `.get() & .post()` are the types of requests that these endpoints will accept.
 * `req` is the actual request body itself. This can be called and accessed using standard context
-for accessing any JSON object in javascript.
+for accessing any JSON object in JavaScript.
 * `res` is the response header for this endpoint. This is where we insert any data we want to send back to the frontend.
 
 Notice how the URL has a `:id` in it. That is known as a parameter. We can pass a
 parameter into our logic for our endpoint by simply modifying this value when we call
-the endpoint. We change the endpoint in this example by calling:
-`http://localhost/task/3` to get tasks created by user with the id of 3. There are other
-ways as well. We can append our URL using query information in order to send different
+the endpoint. 
+
+We change the endpoint in this example by calling:
+`http://localhost/task/3` to get tasks created by user with the id of 3.
+
+There are other ways as well. We can append our URL using query information in order to send different
 data under different key:value stores, as well as sending JSON through the request body
-as well. We can access each of these parts of the request in javascript by calling a different part of the request:
+as well. We can access each of these parts of the request in JavaScript by calling a different part of the request:
   * Parameters to URLs
     ```javascript
     req.params.<key>
@@ -139,7 +142,7 @@ as well. We can access each of these parts of the request in javascript by calli
     req.body.<key>
     ```
 
-Using these values allows you to control what the funciton at the endpoint does and helps you to get the data that you want when you call these endpoints.
+Using these values allows you to control what the function at the endpoint does and helps you to get the data that you want when you call these endpoints.
 
 ### controllers
 
