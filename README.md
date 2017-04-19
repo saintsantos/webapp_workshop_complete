@@ -35,6 +35,8 @@ Start server:
 npm start
 ```
 
+Install Postman from the chrome web store [here](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop)
+
 ### What is a RESTful API?
 REST stands for representational state transfer. Which is a software architecture for distributed systems such as the world wide web.
 The internet actually represents the largest implementation of a RESTful system.
