@@ -12,7 +12,9 @@ git clone https://github.com/saintsantos/webapp_workshop_complete.git
 cd webapp_workshop_complete/server/ && git checkout api
 ```
 
-To install npm please follow the steps in the link below (Mac & Linux):
+**To install npm please follow the steps in the link below:**
+
+**To install on Mac & Linux:**
 
 Install wget:
 ```sh
@@ -33,10 +35,10 @@ nvm install node
 ```
 
 
-To install on Windows:      
+**To install on Windows:**     
 [node installation for windows](https://nodejs.org/en/download/)
 
-Install dependencies:
+**Install dependencies:**
 ```sh
 npm install
 ```
