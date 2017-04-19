@@ -63,7 +63,7 @@ The internet actually represents the largest implementation of a RESTful system.
 The way a RESTful architecture works is through the use of clients and servers.
 * The client makes an HTTP request to a server when it is looking to update its state.
 * Once the server receives the request, it processes that request and sends a response back to the server that contains the result of the request.
-* The client can then update itself according to the information that it receives from the server. Most of the time this data is sent in the form of JSON objects.
+* The client can then update itself according to the information that it receives from the server. Most of the time this data is sent in the form of JSON objects. (More on JSON [here](https://www.w3schools.com/js/js_json_intro.asp).)
 
 
 ### Both HTTP requests and SQL queries will be logged to the console by default
