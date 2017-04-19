@@ -11,7 +11,7 @@ router.get('/hi', (req, res) =>
     res.send('Hi!')
 );
 
-router.get('/task/', function(req, res, next) {
+router.get('/task/', function(req, res) {
   db('tasks')
   .select()
   .then(function(result) {
@@ -19,7 +19,7 @@ router.get('/task/', function(req, res, next) {
   });
 });
 
-router.post('/task/:id',function(req, res, next) {
+router.post('/task/:id',function(req, res) {
   db('tasks')
   .insert({task: req.query.task, created_by: req.params.id}, 'id')
   .then(function(id) {
@@ -27,7 +27,7 @@ router.post('/task/:id',function(req, res, next) {
   });
 });
 
-router.get('/task/:id', function(req, res, next) {
+router.get('/task/:id', function(req, res) {
   db('tasks')
   .select('task')
   .where({created_by: req.params.id})
@@ -36,7 +36,7 @@ router.get('/task/:id', function(req, res, next) {
   });
 });
 
-router.get('/task/:id/active', function(req, res, next) {
+router.get('/task/:id/active', function(req, res) {
   db('tasks')
   .select('task')
   .where({created_by: req.params.id, status: 'active'})
@@ -45,7 +45,7 @@ router.get('/task/:id/active', function(req, res, next) {
   });
 });
 
-router.get('/user/', function(req, res, next) {
+router.get('/user/', function(req, res) {
   db('users')
   .select()
   .then(function(result) {
@@ -53,7 +53,7 @@ router.get('/user/', function(req, res, next) {
   });
 });
 
-router.post('/user/', function(req, res, next) {
+router.post('/user/', function(req, res) {
   db('users')
   .insert({username: req.query.username})
   .then(function() {
@@ -65,7 +65,7 @@ router.post('/user/', function(req, res, next) {
       });
   });
 });
-router.get('/user/:id', function(req, res, next) {
+router.get('/user/:id', function(req, res) {
   db('users')
   .select()
   .where({id: req.params.id})
