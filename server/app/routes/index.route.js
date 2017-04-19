@@ -13,9 +13,14 @@ router.get('/hi', (req, res) =>
 
 //Task routes
 router.get('/task/', function(req, res) {
+  //This should grab and return all tasks
+  //in the backend
 });
 
 router.post('/task/:id',function(req, res) {
+  //This should add a task to the database
+  //Where the 'created_by' column should be
+  //represented by :id
 });
 
 router.get('/task/:id', function(req, res) {
@@ -28,6 +33,8 @@ router.get('/task/:id', function(req, res) {
 });
 
 router.get('/task/:id/active', function(req, res) {
+  //This should only return active tasks that are in
+  //the database
 });
 
 //User routes
