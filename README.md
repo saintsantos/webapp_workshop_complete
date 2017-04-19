@@ -179,3 +179,8 @@ Here's an example of several of our database calls that we make in our API:
   db('tasks')
   .insert({task: req.query.task, created_by: req.params.id}, 'id')
   ```
+## Now It's Your Turn!
+
+Fill in the blank functions in index.route.js. Descriptions of the functions are commented.
+
+You can refer to the functions that are already defined, the Knex.js library, or one of the workshop leads for help! 
