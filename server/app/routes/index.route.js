@@ -11,6 +11,7 @@ router.get('/hi', (req, res) =>
     res.send('Hi!')
 );
 
+//Task routes
 router.get('/task/', function(req, res) {
 });
 
@@ -29,6 +30,7 @@ router.get('/task/:id', function(req, res) {
 router.get('/task/:id/active', function(req, res) {
 });
 
+//User routes
 router.get('/user/', function(req, res) {
   db('users')
   .select()
