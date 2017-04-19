@@ -12,19 +12,9 @@ router.get('/hi', (req, res) =>
 );
 
 router.get('/task/', function(req, res) {
-  db('tasks')
-  .select()
-  .then(function(result) {
-      res.send(result);
-  });
 });
 
 router.post('/task/:id',function(req, res) {
-  db('tasks')
-  .insert({task: req.query.task, created_by: req.params.id}, 'id')
-  .then(function(id) {
-    res.send(id);
-  });
 });
 
 router.get('/task/:id', function(req, res) {
@@ -37,12 +27,6 @@ router.get('/task/:id', function(req, res) {
 });
 
 router.get('/task/:id/active', function(req, res) {
-  db('tasks')
-  .select('task')
-  .where({created_by: req.params.id, status: 'active'})
-  .then(function(tasks) {
-    res.send(tasks);
-  });
 });
 
 router.get('/user/', function(req, res) {
