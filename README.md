@@ -12,12 +12,14 @@ git clone https://github.com/saintsantos/webapp_workshop_complete.git
 cd webapp_workshop_complete/server/ && git checkout api
 ```
 
-To install npm please follow the steps in the link below (mac & linux):     
-[node installation for unix](https://github.com/creationix/nvm)
+To install npm please follow the steps in the link below (Mac & Linux):
 
-if on mac (not necessary on linux):
+Install wget:
 ```sh
-brew install wget
+Mac: brew install wget
+Linux(Ubuntu): sudo apt-get install wget
+Linux(Fedora): sudo dnf install wget
+Linux(Arch): sudo pacman -S wget
 ```
 
 ```sh
@@ -31,7 +33,7 @@ nvm install node
 ```
 
 
-To install on windows:      
+To install on Windows:      
 [node installation for windows](https://nodejs.org/en/download/)
 
 Install dependencies:
@@ -39,8 +41,8 @@ Install dependencies:
 npm install
 ```
 
-This repo will be using several differnet libraries in order to work with as our
-restful API. Once of these libraries is knexjs, which is a javascript library that
+This repo will be using several different libraries in order to work as our
+restful API. One of these libraries is Knex.js, which is a JavaScript library that
 allows access to a sql server through nodejs and allows for creating queries through
 javascript.
 
