@@ -13,11 +13,20 @@ router.get('/hi', (req, res) =>
 
 //Task routes
 router.get('/task/', function(req, res) {
+  db('tasks')
+  .select()
+  .then(function(result) {
+    res.send(result);
+  });
   //This should grab and return all tasks
   //in the backend
 });
 
 router.post('/task/:id',function(req, res) {
+  db('tasks')
+  .insert({task: req.body.task, created_by: req.params.id}).then(function() {
+    res.send("Task added");
+  })
   //This should add a task to the database
   //Where the 'created_by' column should be
   //represented by :id
