@@ -14,7 +14,6 @@ const app = express();
  */
 Promise = require('bluebird');
 const debug = require('debug');
-const db = require('./config/db');
 
 if (config.env == 'development') {
     app.use(logger('dev'));
@@ -31,33 +30,14 @@ app.use(cookieParser());
 
 
 /**
- * Enables detailed API logging
- */
-expressWinston.requestWhitelist.push('body');
-expressWinston.responseWhitelist.push('body');
-app.use(expressWinston.logger({
-    winstonInstance,
-    meta: true,
-    msg: 'HTTP {{req.method}} {{req.url}} {{res.statusCode}} {{res.responseTime}}ms',
-    colorStatus: true
-}));
-
-/**
  * mount all routes on / path
  */
 app.use('/', routes);
 
 /**
- * winston logger
- */
-app.use(expressWinston.errorLogger({
-    winstonInstance
-}));
-
-/**
  * Listen on our port (3000)
  */
-app.listen(config.express.port, () => {
-    console.log(`server started on port ${config.express.port}`)
+app.listen(3000, () => {
+    console.log(`server started on port 3000`)
 });
 export default app;

@@ -1,8 +1,11 @@
 import express from 'express';
-import db from '../config/db';
 import config from '../config/config';
-
 const router = express.Router();
+
+var knex = require('knex')({
+    client: 'sqlite3',
+    connection: config.dbConnection
+});
 /**
  * All routes are imported and handled in this file
  */
@@ -13,7 +16,7 @@ router.get('/hi', (req, res) =>
 
 //Task routes
 router.get('/task/', function(req, res) {
-  db('tasks')
+  knex('tasks')
   .select()
   .then(function(result) {
     res.send(result);
@@ -23,7 +26,7 @@ router.get('/task/', function(req, res) {
 });
 
 router.post('/task/:id',function(req, res) {
-  db('tasks')
+  knex('tasks')
   .insert({task: req.body.task, created_by: req.params.id}).then(function() {
     res.send("Task added");
   })
@@ -33,7 +36,7 @@ router.post('/task/:id',function(req, res) {
 });
 
 router.get('/task/:id', function(req, res) {
-  db('tasks')
+  knex('tasks')
   .select('task')
   .where({created_by: req.params.id})
   .then(function(tasks) {
@@ -48,7 +51,7 @@ router.get('/task/:id/active', function(req, res) {
 
 //User routes
 router.get('/user/', function(req, res) {
-  db('users')
+  knex('users')
   .select()
   .then(function(result) {
     res.send(result);
@@ -56,10 +59,10 @@ router.get('/user/', function(req, res) {
 });
 
 router.post('/user/', function(req, res) {
-  db('users')
+  knex('users')
   .insert({username: req.query.username})
   .then(function() {
-      db('users')
+      knex('users')
       .select()
       .where({username: req.query.username})
       .then(function(result) {
@@ -68,7 +71,7 @@ router.post('/user/', function(req, res) {
   });
 });
 router.get('/user/:id', function(req, res) {
-  db('users')
+  knex('users')
   .select()
   .where({id: req.params.id})
   .then(function(result) {

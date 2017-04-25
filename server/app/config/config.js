@@ -14,13 +14,8 @@ config.express = {
 }
 
 //mysql stuff
+//CHange directory path for sqlite here
 config.dbConnection = {
-    host: 'localhost',
-    user: 'root',
-    port: 3306,
-    password: 'new-password',
-    database: 'todo',
-    charset: 'utf8',
-    debug: false
+    filename: "/home/edwin/git/ACM/webapp_workshop_complete/server/app/routes/todo.db"
 }
 export default config;
