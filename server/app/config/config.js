@@ -16,6 +16,6 @@ config.express = {
 //mysql stuff
 //CHange directory path for sqlite here
 config.dbConnection = {
-    filename: "/home/edwin/git/ACM/webapp_workshop_complete/server/app/routes/todo.db"
+    filename: "<insert path to workshop>/webapp_workshop_complete/server/app/routes/todo.db"
 }
 export default config;
