@@ -5,7 +5,7 @@
 Clone the repo and checkout the frontend branch:
 ```sh
 git clone https://github.com/saintsantos/webapp_workshop_complete.git
-cd webapp_workshop_complete/server/ && git checkout frontend
+cd webapp_workshop_complete/frontend/ && git checkout frontend
 ```
 
 To install npm please follow the steps in the link below:
