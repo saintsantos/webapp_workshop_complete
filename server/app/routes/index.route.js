@@ -11,7 +11,7 @@ var knex = require('knex')({
  */
 //Health Check!
 router.get('/hi', (req, res) =>
-    res.send('Hi!')
+    res.send(config.dbConnection)
 );
 
 //Task routes

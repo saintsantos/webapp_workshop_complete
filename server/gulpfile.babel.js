@@ -28,6 +28,11 @@ gulp.task('copy', () =>
     .pipe(gulp.dest('dist'))
 );
 
+gulp.task('copydb', () =>
+    gulp.src(__dirname+ '/app/config/todo.db')
+    .pipe(gulp.dest(__dirname + '/dist/app/config/'))
+);
+
 gulp.task('babel', () =>
     gulp.src([...paths.js, '!gulpfile.babel.js'], { base: '.'})
     .pipe(plugins.newer('dist'))
@@ -43,12 +48,12 @@ gulp.task('babel', () =>
 );
 
 // Start server with restart on file changes
-gulp.task('nodemon', ['copy', 'babel'], () =>
+gulp.task('nodemon', ['copy', 'copydb', 'babel'], () =>
     plugins.nodemon({
         script: path.join('dist', 'app/index.js'),
         ext: 'js',
         ignore: ['node_modules/**/*.js', 'dist/**/*.js'],
-        tasks: ['copy', 'babel']
+        tasks: ['copy', 'copydb', 'babel']
     })
 );
 
@@ -58,6 +63,6 @@ gulp.task('serve', ['clean'], () => runSequence('nodemon'));
 // default task: clean dist, compile js files and copy non-js files.
 gulp.task('default', ['clean'], ( )=> {
     runSequence(
-        ['copy', 'babel']
+        ['copy', 'copydb', 'babel']
     );
 });
