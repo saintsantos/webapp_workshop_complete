@@ -35,3 +35,11 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# Build Directories
+server/dist/
+
+#tag handling
+.tags
+
+server-php/src/vendor/
