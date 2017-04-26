@@ -8,7 +8,7 @@ function getTodoHTML(todoTask, ownerId) {
 }
 
 function displayTasksForUser(userId) {
-  $.get(SERVER_URL + 'task/' + userId)
+  $.get('REPLACE WITH CORRECT CALL')
   .done(function (resp) {
     if (!resp) {
       $('#message').html('Cannot display tasks for user ID ' + userId + '.')
@@ -41,7 +41,7 @@ function updateUserTodos() {
   }
 
   // AJAX Call to the server to check if the user ID is valid.
-  $.get(SERVER_URL + 'user/' + userId)
+  $.get('REPLACE WITH CORRECT CALL')
   .done(function (resp) {
     if (resp.length == 0) {
       $('#message').html('This ID doesn\'t exist in the database.')
@@ -75,7 +75,7 @@ function init() {
     var userId = $('#username').val()
     var todoTask = $('#input-add-todo').val()
 
-    $.post(SERVER_URL + 'task/' + userId, {'task': todoTask })
+    $.post('REPLACE WITH CORRECT CALL')
     .done(function (resp) {
       $('#message').html(resp)
       updateUserTodos()
@@ -86,4 +86,4 @@ function init() {
 
 
 // Initialize the web application.
-$(document).ready(init)
+// $(document).ready(init)
