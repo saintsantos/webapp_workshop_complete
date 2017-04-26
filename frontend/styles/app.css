@@ -1,0 +1,55 @@
+body {
+  background-color: #fefefe;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
+}
+
+.container {
+  background-color: #fefe64;
+  border-radius: 5px;
+  padding: 30px;
+  margin: 50px auto 0 auto;
+  width: 400px;
+}
+
+/* Todo Input */
+.new-todo {
+  margin-bottom: 15px;
+  position: relative;
+  width: 100%;
+}
+
+.new-todo input {
+  display: inline-block;
+  width: 80%;
+}
+
+.new-todo button {
+  display: inline-block;
+  width: 19%;
+}
+
+/* Todos */
+.todos {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.todo {
+  margin-bottom: 5px;
+}
+
+.todo button {
+  float: right;
+}
+
+
+.todo span {
+  display: inline-block;
+  text-overflow: ellipsis;
+  width: 300px;
+}

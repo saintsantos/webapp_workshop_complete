@@ -19,7 +19,7 @@ config.dbConnection = {
     //For windows
     //filename: "C:\\Users\\<username>\\<path-to-app>\\webapp_workshop_complete\\server\\app\\routes\\todo.db"
     //FOr unix and mac os
-    //filename: "/home/<username>/<path-to-app/webapp_workshop_complete/server/app/routes/todo.db"
+    filename: "/Users/angus/Projects/Personal/webapp_workshop_complete/server/app/routes/todo.db"
 
 }
 export default config;

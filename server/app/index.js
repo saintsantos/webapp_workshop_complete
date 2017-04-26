@@ -7,6 +7,7 @@ import httpStatus from 'http-status';
 import expressWinston from 'express-winston';
 import winstonInstance from './config/winston';
 import routes from './routes/index.route';
+import cors from 'cors';
 
 const app = express();
 /**
@@ -27,6 +28,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 //Same as above, but with cookies
 app.use(cookieParser());
+app.use(cors())
 
 
 /**
