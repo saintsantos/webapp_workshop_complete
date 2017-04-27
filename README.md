@@ -2,6 +2,8 @@
 
 ## Getting Started
 
+If you have already completed all of this in our last workshop, you can skip this section.
+
 Clone the repo and checkout the frontend branch:
 ```sh
 git clone https://github.com/saintsantos/webapp_workshop_complete.git
