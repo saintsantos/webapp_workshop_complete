@@ -18,5 +18,5 @@ _Catch the workshop video_ [here](https://www.youtube.com/watch?v=k3664W7165s).
 ## Back-end/API (see `api` branch [here](https://github.com/saintsantos/webapp_workshop_complete/tree/api))
 _Stay tuned for the workshop video!_ 
 
-## Front-end (see `frontend` branch [here](https://github.com/saintsantos/webapp_workshop_complete/tree/frontend/frontend))
+## Front-end (see `frontend` branch [here](https://github.com/saintsantos/webapp_workshop_complete/tree/frontend))
 _Stay tuned for the workshop video!_ 
