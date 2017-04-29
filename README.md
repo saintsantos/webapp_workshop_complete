@@ -53,4 +53,4 @@ npm start
 ```
 
 ## Content
-* Slides and its contents will be posted here after the workshop!
+[Slides here](https://docs.google.com/presentation/d/1r9cgj2_0u5Aw9UibORai7A1QGu1FJRcjeSqXQh8F_2Y/edit?usp=sharing)
